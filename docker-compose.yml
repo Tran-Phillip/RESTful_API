@@ -1,8 +1,16 @@
-version: '2.1'
+version: '3.3'
 
 services:
-  python:
-    image: python
-    build: .
+  django:
+    image: pb-rest:1.0
     ports:
-      - 3000:3000
+      - "8000:8000"
+    networks:
+      - host
+    volumes:
+      - local:/media/phillz/DATA/Python/REST
+volumes:
+  local:
+
+networks:
+  host:
